@@ -3,13 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="de1dd148-c109-4285-993a-b8789918df14" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/private/auth/google.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/private/auth/google.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/private/auth/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/private/auth/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/private/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/private/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/private/state.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/private/state.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/models/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/database/models/users.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,7 +76,7 @@
       <workItem from="1583897269582" duration="1096000" />
       <workItem from="1583937002114" duration="728000" />
       <workItem from="1584029193329" duration="599000" />
-      <workItem from="1584046247255" duration="6371000" />
+      <workItem from="1584046247255" duration="7113000" />
     </task>
     <servers />
   </component>
@@ -117,5 +112,9 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="649" y="387" key="com.intellij.ide.util.TipDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1584046250035" />
+    <state x="638" y="263" width="710" height="578" key="find.popup" timestamp="1584055283380">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="638" y="263" width="710" height="578" key="find.popup/67.27.1853.1053@67.27.1853.1053" timestamp="1584055283380" />
   </component>
 </project>
