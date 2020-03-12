@@ -1,8 +1,11 @@
 const router = require("express").Router();
 
 router.get("/", (req, res) => {
-
-	res.json({data: {signedIn: Boolean(req.session.signedIn)}});
+	res.json({
+		success: true, data: {
+			signedIn: Boolean(req.session.signedIn)
+		}
+	});
 
 });
 

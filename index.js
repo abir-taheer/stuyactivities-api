@@ -7,10 +7,25 @@ const expressSession = require("express-session");
 const database = require("./database/models");
 const SequelizeConnectSession = require('connect-session-sequelize')(expressSession.Store);
 const sequelizeStore = new SequelizeConnectSession({db: database.sequelize});
+const cors = require("cors");
 
 app.use(cookieParser(process.env.SESSION_SECRET || "some_secret"));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+
+const whitelist = ["https://stuyactivities.org", 'http://localhost:3005'];
+const corsOptions = {
+	origin: (origin, callback) => {
+		if (whitelist.includes(origin)) {
+			callback(null, true)
+		} else {
+			callback(new Error('Not allowed by CORS'))
+		}
+	},
+	credentials: true
+};
+
+app.use(cors(corsOptions));
 
 const sessionOptions = {
 	secret: process.env.SESSION_SECRET || "some_secret",

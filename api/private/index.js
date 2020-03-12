@@ -1,9 +1,6 @@
 const router = require("express").Router();
 
-router.get("/", (req, res) => {
-
-	res.json({data: {signedIn: Boolean(req.session.signedIn)}});
-
-});
+router.use("/state", require("./state"));
+router.use("/auth", require("./auth"));
 
 module.exports = router;
