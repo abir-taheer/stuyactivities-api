@@ -8,15 +8,16 @@ const database = require("./database/models");
 const SequelizeConnectSession = require('connect-session-sequelize')(expressSession.Store);
 const sequelizeStore = new SequelizeConnectSession({db: database.sequelize});
 const cors = require("cors");
+const dotenv = require("dotenv").config();
 
 app.use(cookieParser(process.env.SESSION_SECRET || "some_secret"));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-const whitelist = ["https://stuyactivities.org", 'http://localhost:3000'];
+const whitelist = ["https://stuyactivities.org"];
 const corsOptions = {
 	origin: (origin, callback) => {
-		if (whitelist.includes(origin)) {
+		if (whitelist.includes(origin) || process.env.NODE_ENV === "development") {
 			callback(null, true)
 		} else {
 			callback(new Error('Not allowed by CORS'))
