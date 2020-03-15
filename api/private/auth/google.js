@@ -59,12 +59,14 @@ router.post("/", async (req, res) => {
 
 	// If we get to this point, that means we have to locate the user ourselves
 	// Get the newest person to have used that email address
-	const findUser = await users.max("gradYear", {
+	const findUser = await users.findOne({
 		where: {
 			email: payload.email
-		}
+		},
+		order: [
+			[ 'gradYear', 'DESC' ]
+		]
 	});
-
 
 	// The user exists and we can connect their oAuthId to their userId
 	if(findUser){

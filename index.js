@@ -13,7 +13,7 @@ app.use(cookieParser(process.env.SESSION_SECRET || "some_secret"));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-const whitelist = ["https://stuyactivities.org", 'http://localhost:3005'];
+const whitelist = ["https://stuyactivities.org", 'http://localhost:3000'];
 const corsOptions = {
 	origin: (origin, callback) => {
 		if (whitelist.includes(origin)) {
