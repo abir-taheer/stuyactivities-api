@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const {orgUpdates, organizations, updatePics} = require("./../../../database/models");
+const {orgUpdates, organizations, updatePics, updateLinks, urlMetaCache} = require("./../../../database/models");
 
 router.get("/", async (req, res) => {
 	res.json({
@@ -12,7 +12,13 @@ router.get("/", async (req, res) => {
 				},
 				{
 					model: updatePics,
-					attributes: ["fileName"]
+					attributes: ["fileName"],
+					as: "pics"
+				},
+				{
+					model: urlMetaCache,
+					attributes: ["title", "description", "image", "url"],
+					as: "links"
 				}
 			]
 		})

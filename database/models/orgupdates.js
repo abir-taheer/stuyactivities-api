@@ -9,7 +9,8 @@ module.exports = (sequelize, DataTypes) => {
 	orgUpdates.associate = function (models) {
 		// associations can be defined here
 		orgUpdates.belongsTo(models.organizations, {foreignKey: "orgId", targetKey: "id"});
-		orgUpdates.hasMany(models.updatePics, {foreignKey: "updateId"});
+		orgUpdates.hasMany(models.updatePics, {foreignKey: "updateId", as: "pics"});
+		orgUpdates.belongsToMany(models.urlMetaCache, {through: models.updateLinks, foreignKey: "updateId", as: "links"});
 	};
 	return orgUpdates;
 };

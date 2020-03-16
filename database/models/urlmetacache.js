@@ -9,6 +9,7 @@ module.exports = (sequelize, DataTypes) => {
 	}, {});
 	urlMetaCache.associate = function (models) {
 		// associations can be defined here
+		urlMetaCache.belongsToMany(models.orgUpdates, {through: models.updateLinks, foreignKey: "urlCacheId"});
 	};
 	return urlMetaCache;
 };
