@@ -9,7 +9,7 @@ module.exports = (sequelize, DataTypes) => {
 	orgUpdates.associate = function (models) {
 		// associations can be defined here
 		orgUpdates.belongsTo(models.organizations, {foreignKey: "orgId", targetKey: "id"});
-
+		orgUpdates.hasMany(models.updatePics, {foreignKey: "updateId"});
 	};
 	return orgUpdates;
 };

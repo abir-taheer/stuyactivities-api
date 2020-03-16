@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const {orgUpdates, organizations} = require("./../../../database/models");
+const {orgUpdates, organizations, updatePics} = require("./../../../database/models");
 
 router.get("/", async (req, res) => {
 	res.json({
@@ -8,7 +8,11 @@ router.get("/", async (req, res) => {
 			include: [
 				{
 					model: organizations,
-					attributes: ["name", "publicUrl"]
+					attributes: ["name", "publicUrl", "id"]
+				},
+				{
+					model: updatePics,
+					attributes: ["fileName"]
 				}
 			]
 		})
