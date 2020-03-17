@@ -1,15 +1,15 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
-	const urlMetaCache = sequelize.define('urlMetaCache', {
-		originalUrl: DataTypes.STRING,
-		url: DataTypes.STRING,
-		title: DataTypes.STRING,
-		description: DataTypes.STRING,
-		image: DataTypes.STRING
+	const cachedUrls = sequelize.define('cachedUrls', {
+		originalUrl: DataTypes.TEXT,
+		url: DataTypes.TEXT,
+		title: DataTypes.TEXT,
+		description: DataTypes.TEXT,
+		image: DataTypes.TEXT
 	}, {});
-	urlMetaCache.associate = function (models) {
+	cachedUrls.associate = function (models) {
 		// associations can be defined here
-		urlMetaCache.belongsToMany(models.orgUpdates, {through: models.updateLinks, foreignKey: "urlCacheId"});
+		cachedUrls.belongsToMany(models.updates, {through: models.updateLinks, foreignKey: "cachedUrlId"});
 	};
-	return urlMetaCache;
+	return cachedUrls;
 };

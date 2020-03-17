@@ -1,7 +1,7 @@
 'use strict';
 module.exports = {
 	up: (queryInterface, Sequelize) => {
-		return queryInterface.createTable('urlMetaCaches', {
+		return queryInterface.createTable('cachedUrls', {
 			id: {
 				allowNull: false,
 				autoIncrement: true,
@@ -9,19 +9,19 @@ module.exports = {
 				type: Sequelize.INTEGER
 			},
 			originalUrl: {
-				type: Sequelize.STRING
+				type: Sequelize.TEXT
 			},
 			url: {
-				type: Sequelize.STRING
+				type: Sequelize.TEXT
 			},
 			title: {
-				type: Sequelize.STRING
+				type: Sequelize.TEXT
 			},
 			description: {
-				type: Sequelize.STRING
+				type: Sequelize.TEXT
 			},
 			image: {
-				type: Sequelize.STRING
+				type: Sequelize.TEXT
 			},
 			createdAt: {
 				allowNull: false,
@@ -34,6 +34,6 @@ module.exports = {
 		});
 	},
 	down: (queryInterface, Sequelize) => {
-		return queryInterface.dropTable('urlMetaCaches');
+		return queryInterface.dropTable('cachedUrls');
 	}
 };

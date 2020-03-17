@@ -8,7 +8,7 @@ module.exports = (sequelize, DataTypes) => {
 	}, {});
 	organizations.associate = function (models) {
 		// associations can be defined here
-		organizations.hasMany(models.orgUpdates, {foreignKey: "orgId"});
+		organizations.hasMany(models.updates, {foreignKey: "orgId"});
 	};
 	return organizations;
 };

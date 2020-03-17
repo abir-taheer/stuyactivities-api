@@ -1,12 +1,12 @@
 const router = require("express").Router();
-const {urlMetaCache} = require("./../../../database/models");
+const {cachedUrls} = require("./../../../database/models");
 const axios = require("axios");
 const querystring = require('querystring');
 
 router.post("/", async (req, res) => {
 	const originalUrl = req.body.url;
 
-	const existing = await urlMetaCache.findOne({
+	const existing = await cachedUrls.findOne({
 		where: {
 			originalUrl
 		},
@@ -25,7 +25,7 @@ router.post("/", async (req, res) => {
 	const safeUrl = querystring.escape(originalUrl);
 	const {data} = await axios.get(`http://api.linkpreview.net/?key=${apiKey}&q=${safeUrl}`);
 
-	await urlMetaCache.create({
+	await cachedUrls.create({
 		originalUrl,
 		...data
 	});

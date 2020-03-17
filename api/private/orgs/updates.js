@@ -1,10 +1,10 @@
 const router = require("express").Router();
-const {orgUpdates, organizations, updatePics, updateLinks, urlMetaCache} = require("./../../../database/models");
+const {updates: updates, organizations, updatePics, updateLinks, cachedUrls} = require("./../../../database/models");
 
 router.get("/", async (req, res) => {
 	res.json({
 		success: true,
-		payload: await orgUpdates.findAll({
+		payload: await updates.findAll({
 			include: [
 				{
 					model: organizations,
@@ -16,7 +16,7 @@ router.get("/", async (req, res) => {
 					as: "pics"
 				},
 				{
-					model: urlMetaCache,
+					model: cachedUrls,
 					attributes: ["title", "description", "image", "url"],
 					as: "links"
 				}

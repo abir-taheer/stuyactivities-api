@@ -6,7 +6,7 @@ module.exports = (sequelize, DataTypes) => {
 	}, {});
 	updatePics.associate = function (models) {
 		// associations can be defined here
-		updatePics.belongsTo(models.orgUpdates, {foreignKey: "updateId", targetKey: "id"});
+		updatePics.belongsTo(models.updates, {foreignKey: "updateId", targetKey: "id"});
 	};
 	return updatePics;
 };

@@ -1,7 +1,7 @@
 'use strict';
 module.exports = {
 	up: (queryInterface, Sequelize) => {
-		return queryInterface.createTable('orgUpdates', {
+		return queryInterface.createTable('updates', {
 			id: {
 				allowNull: false,
 				autoIncrement: true,
@@ -31,6 +31,6 @@ module.exports = {
 		});
 	},
 	down: (queryInterface, Sequelize) => {
-		return queryInterface.dropTable('orgUpdates');
+		return queryInterface.dropTable('updates');
 	}
 };

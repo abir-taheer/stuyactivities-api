@@ -11,10 +11,10 @@ module.exports = {
 			updateId: {
 				type: Sequelize.INTEGER
 			},
-			urlCacheId: {
+			cachedUrlId: {
 				type: Sequelize.INTEGER,
 				references: {
-					model: "urlMetaCaches",
+					model: "cachedUrls",
 					key: "id"
 				}
 			},
